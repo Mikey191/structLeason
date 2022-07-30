@@ -1,0 +1,49 @@
+//особонности работы со структурами
+//Передача объектов структуры в качестве параметра функции 
+//и возвращение объектов в результате работы функции
+//
+
+#include <iostream>
+using namespace std;
+
+struct date {
+	int day;
+	int month;
+	int year;
+	char mon_name[12];
+};
+ //Объект структуры передаётся в функцию по значению
+ //Возможна также передача по ссылке и по указателю
+void Show(date a) {
+	// показ содержимого объекта a
+	cout << a.day << " ";
+	cout << a.year << " ";
+	cout << a.month << " ";
+	cout << a.mon_name << "\n\n";
+}
+
+date Put() {
+	// формирование объекта
+	date temp;
+	cout << "DAY ? ";
+	cin >> temp.day;
+	cout << "MONTH ? ";
+	cin >> temp.month;
+	cout << "YEAR ? ";
+	cin >> temp.year;
+	cout << "MONTH NAME ? ";
+	cin >> temp.mon_name;
+	return temp;
+}
+
+int main() {
+	date a = { 14,7,1954,"July" };
+	date b;
+	// передача объекта в функцию
+	Show(a);
+	// получение объекта в качестве возвращаемого значения
+	b = Put();
+	// показ содержимого объекта b
+	Show(b);
+	return 0;
+}

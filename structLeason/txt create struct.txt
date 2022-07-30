@@ -1,0 +1,48 @@
+//особонности работы со структурами
+//создание структуры
+
+#include <iostream>
+using namespace std;
+
+struct date
+{
+	int day;
+	int month;
+	int year;
+	int weekday;
+	char mon_name[15];
+};
+
+int main()
+{
+	date myBirthday = { 10, 3, 1991, 7, "march" };
+	cout << "\t\tMy Birthday\n\n";
+	cout << "Day " << myBirthday.day << endl;
+	cout << "Month " << myBirthday.month<< endl;
+	cout << "Year " << myBirthday.year << endl;
+	cout << "Week day " << myBirthday.weekday << endl;
+	cout << "Month name " << myBirthday.mon_name << endl;
+	cout << endl;
+
+	date yourBirthday;
+	cout << "Day : ";
+	cin>>yourBirthday.day;
+	cout << "Month : ";
+	cin >> yourBirthday.month;
+	cout << "Year : ";
+	cin >> yourBirthday.year;
+	cout << "Weekday : ";
+	cin >> yourBirthday.weekday;
+	cout << "Month name : ";
+	cin >> yourBirthday.mon_name;
+
+	cout << "\t\tYour Birthday\n\n";
+	cout << "Day " << yourBirthday.day << endl;
+	cout << "Month " << yourBirthday.month << endl;
+	cout << "Year " << yourBirthday.year << endl;
+	cout << "Week day " << yourBirthday.weekday << endl;
+	cout << "Month name " << yourBirthday.mon_name << endl;
+	cout << endl;
+
+	return 0;
+}

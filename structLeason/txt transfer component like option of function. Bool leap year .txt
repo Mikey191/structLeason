@@ -1,0 +1,42 @@
+//Действия над структурами
+//передача отдельных компонентов в качестве аргументов функции
+//функция проверяет год на високосный
+
+#include <iostream>
+using namespace std;
+
+struct date
+{
+	int day;
+	int month;
+	int year;
+	char mon_name[12];
+};
+
+//проверка годв на високосный
+bool IsLeapYear(int checkYear)
+{
+	//год не високостный если условие истина
+	if (checkYear % 4 != 0 || ((checkYear % 100 == 0) && (checkYear % 400 != 0)))
+	{
+		return false;
+	}
+	//если условие лодное год високостный
+	return true;
+}
+
+int main()
+{
+	int tempYear = 2020;
+	date curDate = { 12,5,tempYear, "May" };
+	if (IsLeapYear(curDate.year) == true)
+	{
+		cout << tempYear << " is leap year\n";
+	}
+	else
+	{
+		cout << tempYear << " is not leap year\n";
+	}
+	
+	return 0;
+}

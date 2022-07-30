@@ -1,0 +1,35 @@
+//Действия над структурами
+//присваивание объектов структур друг другу
+
+#include <iostream>
+using namespace std;
+
+struct date
+{
+	int day;
+	int month;
+	int year;
+	char mon_name[12];
+};
+
+int main()
+{
+	//создаем объетк и инициализируем поля
+	date a = { 14,7,1954,"July" };
+	//создаем объект без инициализации
+	date b;
+	//показ А
+	cout << a.day << " ";
+	cout << a.month << " ";
+	cout << a.year << " ";
+	cout << a.mon_name << " ";
+	//а присваиваем b
+	b = a;
+	cout << endl;
+	cout << b.day << " ";
+	cout << b.month << " ";
+	cout << b.year << " ";
+	cout << b.mon_name << " ";
+
+	return 0;
+}

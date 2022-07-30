@@ -1,0 +1,44 @@
+//Действия над структурами
+//определение адреса объекта структ с помощью операции &
+
+#include <iostream>
+using namespace std;
+
+struct date
+{
+	int day;
+	int month;
+	int year;
+	char mon_name[12];
+};
+
+int main()
+{
+	//Создание и инициализация объекта структуры.
+	//d - переменная типа date
+	//2 попадает в day
+	//5 попадает в month
+	//1976 в year
+	//July в mon_name
+	date d = { 2, 5, 1976, "July" };
+	// Указатель Р указывает на структуру типа date
+	date* p = nullptr;
+	//Показ содержимого структуры на экран
+	//обращение через объект
+	cout << d.day << " ";
+	cout << d.month << " ";
+	cout << d.year << " ";
+	cout << d.mon_name << " ";
+	//запись адреса структуры в указатель
+	p = &d;
+	/*Показ содержимого структуры на экран
+	обращение через указатель
+	*/
+	cout << endl;
+	cout << p->day << " ";
+	cout << p->month << " ";
+	cout << p->year << " ";
+	cout << p->mon_name << " ";
+
+	return 0;
+}

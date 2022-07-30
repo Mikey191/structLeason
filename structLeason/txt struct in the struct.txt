@@ -1,0 +1,38 @@
+//особонности работы со структурами
+//структура в структуре
+
+#include <iostream>
+using namespace std;
+
+struct date
+{
+	int day;
+	int month;
+	int year;
+};
+
+const int namesize = 15;
+const int adrsize = 15;
+struct person
+{
+	char name[namesize];
+	char address[adrsize];
+	int zipcode[2];
+	int s_number[2];
+	int salary[4];
+
+	date birthdate;//дата рождения
+	date hiredate;//дата поступления
+
+};
+
+int main()
+{
+	person Nick;
+	cout << "Nick month birthday ? - ";
+	cin >> Nick.birthdate.month;
+	cout << endl;
+	cout << "Nick month birthday :" << Nick.birthdate.month << endl;
+
+	return 0;
+}
