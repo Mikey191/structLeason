@@ -42,11 +42,15 @@ film create()
 	return temp;
 }
 
-void ShowList(film* a[], int size)
+void ShowList(film* a, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
-		cout << a[i] << endl;
+		cout << a[i].title<< endl;
+		cout << a[i].director << endl;
+		cout << a[i].genre << endl;
+		cout << a[i].rating<< endl;
+		cout << a[i].price << endl;
 	}
 	cout << endl;
 }
@@ -57,7 +61,9 @@ int main()
 	int sizelist = 2;
 	film* ListFilm = new film[sizelist];
 	ListFilm[0] = create();
-	ListFilm[0] = create();
+	cout << endl;
+	ListFilm[1] = create();
+	cout << endl;
 	ShowList(ListFilm, sizelist);
 
 	return 0;
